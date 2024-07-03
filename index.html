@@ -73,7 +73,7 @@
             </div>
         </div>
         <div class="md:w-2/3 md:pl-6">
-            <p class="text-xl text-center md:text-left mb-2 m-4"> I'm a second-year Master's student in <a href="https://manutech-sleight.com/graduate-studies/mldm-machine-learning-data-mining-203224.kjsp" class="text-blue-600 hover:text-blue-800"> Machine Learning and Data Mining</a> at Université de Lyon - Université Jean Monnet, currently doing an internship at the <a href="https://www.bordeaux-population-health.center" class="text-blue-600 hover:text-blue-800"> Bordeaux Population Health Research Center (INSERM)</a>, France. My main research interest at this moment is in the applicability of Natural Language Processing methods for Public Health. As of right now, I'm supported by a scholarship from the French Ministry of Foreign Affairs and the National Secretary of Science, Technology and Innovation of Panama.
+            <p class="text-xl text-center md:text-left mb-2 m-4"> I'm a soon-to-be PhD student in Natural Language Processing (NLP) for Public Health a the <a href="https://www.bordeaux-population-health.center" class="text-blue-600 hover:text-blue-800"> Bordeaux Population Health Research Center</a> of the INSERM and the University of Bordeaux, thanks to a PhD Grant from the <a href="https://doctorat.u-bordeaux.fr/en/before-phd/graduate-programs/dph" class="text-blue-600 hover:text-blue-800"> Digital Public Health</a> Graduate Program. Previously, I did a Master's in <a href="https://manutech-sleight.com/graduate-studies/mldm-machine-learning-data-mining-203224.kjsp" class="text-blue-600 hover:text-blue-800"> Machine Learning and Data Mining</a> at Université de Lyon - Université Jean Monnet. My main research interest at this moment is in the study of judgment biases in emergency medicine through large langauge model (LLM) modelisation.
                 <br><br>
                 Before that, I obtained my Engineering degree in Telecommunications from the Technological University of Panama, specializing in Signal Processing. I also worked as a research engineer at the <a href="http://gitts.utp.ac.pa/es/inicio/" class="text-blue-600 hover:text-blue-800"> Research Group on Advanced Technologies of Telecommunications and Signal Processing</a>, Panama. I have also done internships in other laboratories in France, such as <a href="https://laboratoirehubertcurien.univ-st-etienne.fr/en/index.html" class="text-blue-600 hover:text-blue-800"> Hubert Curien Laboratory</a> in Saint-Étienne, and the <a href="https://www.ims-bordeaux.fr" class="text-blue-600 hover:text-blue-800"> IMS Laboratory</a> in Bordeaux.
                 <br><br>
@@ -87,7 +87,7 @@
 
         <section id="research" class="mb-12">
             <h2 class="text-4xl font-bold mb-4">Research Interests</h2>
-            <p>My research interests are mostly around AI, and more specifically Natural Language Processing applications. I have worked on several projects related to the analysis of long-unstructured text for different tasks ranging from sentiment analysis to topic modeling, and more recently, text classification on data from social media and the health domain.
+            <p>My research interests circle mostly around the use of NLP for different aspects of health, but most importantly how these models tend to "pick up" human biases and strange behaviors. I have worked on several projects related to the analysis of long-unstructured text for different tasks ranging from sentiment analysis to topic modeling, and more recently, text classification on data from social media and the health domain.
                 <br>
                 I have also explored the application of Brain-Computer Interfaces with non-invasive electrodes during my Engineering thesis. This work consisted in the online processing of non-stationary EEG signals for the control of a device. 
                 <br>
@@ -98,6 +98,32 @@
             <h2 class="text-4xl font-bold mb-4">Publications</h2>
             <p> <i> * = Equal contribution</i></p>
             <ul>
+                <li>
+                    <a href="https://journals.flvc.org/FLAIRS/article/view/135570" class="text-blue-600 hover:text-blue-800">AI-Driven Emergency Patient Flow Optimization is Both an Unmissable Opportunity and a Risk of Systematizing Health Disparities</a>
+                    <br>
+                    Dylan Russon, Marta Avalos-Fernandez, <b>Ariel Guerra-Adames</b>, Cédric Gil-Jardiné and Emmanuel Lagarde
+                    <br>
+                    <i>The International FLAIRS Conference Proceedings, 37(1). 2024</i>
+                    <br>
+                    <div class="flex space-x-2 w-1/3">
+                        <button type="button" class="flex-1 px-1 py-1 bg-blue-400 text-white rounded hover:bg-blue-600 flex justify-center" onclick="show('abs1')">Abstract</button>
+                        <a href="https://preprints.jmir.org/preprint/57828" class="flex-1 px-1 py-1 bg-blue-400 text-white rounded hover:bg-blue-600 flex justify-center">PDF</a>
+                        <button type="button" class="flex-1 px-1 py-1 bg-blue-400 text-white rounded hover:bg-blue-600 flex justify-center" onclick="show('bib1')">BibTeX</button>
+                    </div>
+                    <div id="abs1" class="popup-abs" style="display: none;">
+                        There is a burgeoning interest in harnessing artificial intelligence (AI) to enhance patient flow within emergency departments (EDs). However, this advancement is accompanied by a significant risk: by relying on historical healthcare data, these AI tools may perpetuate existing systemic biases associated with gender, age, ethnicity, and socioeconomic status. This paper surveys studies identifying biases in ED data, offering context for concern about these biases. These insights are valuable for researchers developing AI to optimize ED workflows while accounting for ethical considerations.
+                    </div>
+                    <div id="bib1" class="popup" style="display: none;">
+                        @inproceedings{russon2024ai,
+                            title={AI-Driven Emergency Patient Flow Optimization is Both an Unmissable Opportunity and a Risk of Systematizing Health Disparities: Human Bias in ED: Implications for AI-Driven Patient Flow Optimization},
+                            author={Russon, Dylan and Avalos, Marta and Guerra-Adames, Ariel and Gil-Jardin{\'e}, C{\'e}dric and Lagarde, Emmanuel},
+                            booktitle={The International FLAIRS Conference Proceedings},
+                            volume={37},
+                            year={2024}
+                          }
+                    </div>
+                    <br>
+                </li>
                 <li>
                     <a href="https://preprints.jmir.org/preprint/57828" class="text-blue-600 hover:text-blue-800">Harnessing Moderate-Sized Language Models for Reliable Patient Data De-identification in Emergency Department Records: An Evaluation of Strategies and Performance (Preprint)</a>
                     <br>
@@ -288,7 +314,7 @@
     <footer class="bg-white">
         <div class="container mx-auto px-6 py-4">
             <p class="text-gray-700">&copy; Copyright Ariel Guerra-Adames 2024</p>
-            <p class="text-gray-700">Last updated March 25th, 2024</p>
+            <p class="text-gray-700">Last updated July 3rd, 2024</p>
         </div>
     </footer>
 
