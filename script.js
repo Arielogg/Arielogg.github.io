@@ -1,6 +1,6 @@
 window.addEventListener('scroll', function() {
     const navbarName = document.getElementById('navbar-name');
-    if (window.scrollY > 100) { // Adjust the number based on when you want the name to appear
+    if (window.scrollY > 100) {
         navbarName.classList.remove('opacity-0');
         navbarName.classList.add('opacity-100');
     } else {
@@ -21,3 +21,14 @@ if (element.style.display === "none") {
     element.style.display = "none";
 }
 }
+
+document.addEventListener('DOMContentLoaded', function() {
+    const now = new Date();
+    const options = { year: 'numeric', month: 'numeric', day: 'numeric' };
+    const formattedDate = now.toLocaleDateString('en-US', options).replace(/\//g, '/');
+    
+    const lastUpdatedElement = document.querySelector('footer p:nth-child(2)');
+    if (lastUpdatedElement) {
+        lastUpdatedElement.textContent = 'Last updated ' + formattedDate;
+    }
+});
