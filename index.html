@@ -378,10 +378,22 @@
     <footer class="bg-white">
         <div class="container mx-auto px-6 py-4">
             <p class="text-gray-700">&copy; Copyright Ariel Guerra-Adames 2025</p>
-            <p class="text-gray-700">Last updated </p>
+            <p class="text-gray-700" id="lastUpdated">Last updated </p>
         </div>
     </footer>
 
     <script src="script.js"></script>
+    <script>
+        (function() {
+            const now = new Date();
+            const options = { year: 'numeric', month: 'long', day: 'numeric' };
+            const formattedDate = now.toLocaleDateString('en-US', options);
+            
+            const lastUpdatedElement = document.getElementById('lastUpdated');
+            if (lastUpdatedElement) {
+                lastUpdatedElement.textContent = 'Last updated: ' + formattedDate;
+            }
+        })();
+    </script>
 </body>
 </html>
