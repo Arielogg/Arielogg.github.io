@@ -27,20 +27,40 @@ function show(id) {
     }
 }
 
-function updateLastModified() {
-    const now = new Date();
-    const options = { year: 'numeric', month: 'long', day: 'numeric' };
-    const formattedDate = now.toLocaleDateString('en-US', options);
-    
-    const lastUpdatedElement = document.querySelector('footer p:nth-child(2)');
-    if (lastUpdatedElement) {
-        lastUpdatedElement.textContent = 'Last updated: ' + formattedDate;
-        console.log('Date updated to: ' + formattedDate); 
+async function fetchLastCommitDate() {
+    const owner = 'Arielogg';
+    const repo = 'Arielogg.github.io';
+    const url = `https://api.github.com/repos/${owner}/${repo}/commits`;
+
+    try {
+        const response = await fetch(url);
+        if (!response.ok) {
+            throw new Error(`GitHub API error: ${response.status}`);
+        }
+        const commits = await response.json();
+        if (commits && commits.length > 0) {
+            const lastCommitDateStr = commits[0].commit.committer.date;
+            const lastCommitDate = new Date(lastCommitDateStr);
+            const options = { year: 'numeric', month: 'long', day: 'numeric' };
+            const formattedDate = lastCommitDate.toLocaleDateString('en-US', options);
+            
+            const lastUpdatedElement = document.getElementById('lastUpdated');
+            if (lastUpdatedElement) {
+                lastUpdatedElement.textContent = 'Last updated: ' + formattedDate;
+            }
+        } else {
+            const lastUpdatedElement = document.getElementById('lastUpdated');
+            if (lastUpdatedElement) {
+                lastUpdatedElement.textContent = 'Last updated: N/A';
+            }
+        }
+    } catch (error) {
+        console.error('Failed to fetch last commit date:', error);
+        const lastUpdatedElement = document.getElementById('lastUpdated');
+        if (lastUpdatedElement) {
+            lastUpdatedElement.textContent = 'Last updated: Error fetching date';
+        }
     }
 }
 
-document.addEventListener('DOMContentLoaded', updateLastModified);
-
-if (document.readyState === 'complete' || document.readyState === 'interactive') {
-    setTimeout(updateLastModified, 100);
-}
+document.addEventListener('DOMContentLoaded', fetchLastCommitDate);
