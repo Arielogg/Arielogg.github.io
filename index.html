@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ariel Guerra-Adames</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+        }
+    </script>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
@@ -26,7 +31,7 @@
             position: absolute;
             left: 50%;
             transform: translateX(-50%);
-            bottom: -20px; /* Adjust as needed */
+            bottom: -20px;
         }
         .masthead-links {
             display: flex;
@@ -37,18 +42,27 @@
         .masthead-links a {
             margin: 0.25rem 0;
         }
+        .theme-toggle {
+            transition: transform 0.2s ease;
+        }
+        .theme-toggle:hover {
+            transform: scale(1.1);
+        }
     </style>
 </head>
-<body class="bg-gray-100 text-gray-900">
+<body class="bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-300">
 
     <!-- Navigation Bar -->
-    <nav id="navbar" class="bg-white shadow fixed w-full z-10">
+    <nav id="navbar" class="bg-white dark:bg-gray-800 shadow fixed w-full z-10 transition-colors duration-300">
         <div class="container mx-auto px-6 py-3 flex justify-between items-center">
-            <div class="text-3xl font-bold text-gray-900 opacity-0 transition-opacity duration-300" id="navbar-name">Ariel Guerra-Adames</div>
-                <div class="hidden md:flex space-x-4">
-                    <a href="#research" class="text-gray-600 hover:text-gray-900">Research</a>
-                    <a href="#publications" class="text-gray-600 hover:text-gray-900">Publications</a>
-                    <a href="#talks" class="text-gray-600 hover:text-gray-900">Talks</a>
+            <div class="text-3xl font-bold text-gray-900 dark:text-gray-100 opacity-0 transition-opacity duration-300" id="navbar-name">Ariel Guerra-Adames</div>
+                <div class="hidden md:flex space-x-4 items-center">
+                    <a href="#research" class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-gray-100">Research</a>
+                    <a href="#publications" class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-gray-100">Publications</a>
+                    <a href="#talks" class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-gray-100">Talks</a>
+                    <button id="theme-toggle" class="theme-toggle ml-4 p-2 rounded-lg bg-gray-200 dark:bg-gray-700 text-gray-600 dark:text-gray-300 hover:bg-gray-300 dark:hover:bg-gray-600">
+                        <i id="theme-icon" class="fas fa-moon"></i>
+                    </button>
                 </div>
             </div>
         </div>
@@ -60,22 +74,22 @@
             <img id="profile-pic" src="profile.JPG" alt="a photo of me" class="w-4/5 mb-4 mx-auto mt-8">
             <div class="mx-auto">
                 <h1 class="text-4xl text-center mb-4">Hey, I'm Ariel<br>Guerra-Adames</h1>
-                <p class="text-center mb-4 text-gray-600">ariel.guerra-adames [at] u-bordeaux.fr</p>
+                <p class="text-center mb-4 text-gray-600 dark:text-gray-400">ariel.guerra-adames [at] u-bordeaux.fr</p>
                 <div class="flex space-x-4 mb-4 justify-center">
                     <!-- Social Media Icons -->
-                    <a href="https://scholar.google.com/citations?user=GnBOGloAAAAJ&hl=en" class="text-gray-600 hover:text-gray-900"><i class="fa-brands fa-google-scholar"></i></a>
-                    <a href="https://linkedin.com/in/arieloguerra" class="text-gray-600 hover:text-gray-900"><i class="fa-brands fa-linkedin-in"></i></a>
-                    <a href="https://github.com/Arielogg" class="text-gray-600 hover:text-gray-900"><i class="fa-brands fa-github"></i></a>
-                    <a href="https://bsky.app/profile/arielguerraadames.me" class="text-gray-600 hover:text-gray-900"><i class="fa-brands fa-bluesky"></i></a>
+                    <a href="https://scholar.google.com/citations?user=GnBOGloAAAAJ&hl=en" class="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200"><i class="fa-brands fa-google-scholar"></i></a>
+                    <a href="https://linkedin.com/in/arieloguerra" class="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="https://github.com/Arielogg" class="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200"><i class="fa-brands fa-github"></i></a>
+                    <a href="https://bsky.app/profile/arielguerraadames.me" class="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200"><i class="fa-brands fa-bluesky"></i></a>
                 </div>
             </div>
         </div>
         <div class="md:w-2/3 md:pl-6">
-            <p class="text-xl text-center md:text-left mb-2 m-4"> I'm a doctoral student in Computer Science for Public Health at the <a href="https://www.bordeaux-population-health.center" class="text-blue-600 hover:text-blue-800"> Bordeaux Population Health Research Center</a> of the University of Bordeaux and the French National Institute of Health and Medical Research (INSERM). More specifically, my doctoral thesis focuses on the study of how cognitive biases impact emergency triage and emergency medical dispatching using Large Language Models (LLM). My research efforts are supported by a PhD Grant from the <a href="https://doctorat.u-bordeaux.fr/en/before-phd/graduate-programs/dph" class="text-blue-600 hover:text-blue-800"> Digital Public Health</a> Graduate Program of the University of Bordeaux. Previously, I obtained a master's degree (MSc) in <a href="https://manutech-sleight.com/graduate-studies/mldm-machine-learning-data-mining-203224.kjsp" class="text-blue-600 hover:text-blue-800"> Machine Learning and Data Mining</a> at Université Jean Monnet.
+            <p class="text-xl text-center md:text-left mb-2 m-4"> I'm a doctoral student in Computer Science for Public Health at the <a href="https://www.bordeaux-population-health.center" class="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300"> Bordeaux Population Health Research Center</a> of the University of Bordeaux and the French National Institute of Health and Medical Research (INSERM). More specifically, my doctoral thesis focuses on the study of how cognitive biases impact emergency triage and emergency medical dispatching using Large Language Models (LLM). My research efforts are supported by a PhD Grant from the <a href="https://doctorat.u-bordeaux.fr/en/before-phd/graduate-programs/dph" class="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300"> Digital Public Health</a> Graduate Program of the University of Bordeaux. Previously, I obtained a master's degree (MSc) in <a href="https://manutech-sleight.com/graduate-studies/mldm-machine-learning-data-mining-203224.kjsp" class="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300"> Machine Learning and Data Mining</a> at Université Jean Monnet.
                 <br><br>
-                Before that, I obtained my Bachelor of Engineering (BEng) in Telecommunications from the Technological University of Panama, specializing in Signal Processing. I also worked as a research engineer at the <a href="http://gitts.utp.ac.pa/es/inicio/" class="text-blue-600 hover:text-blue-800"> Research Group on Advanced Technologies of Telecommunications and Signal Processing</a>, in Panama City, Panama. I have also done internships in other laboratories in France, such as <a href="https://laboratoirehubertcurien.univ-st-etienne.fr/en/index.html" class="text-blue-600 hover:text-blue-800"> Hubert Curien Laboratory</a> in Saint-Étienne, and the <a href="https://www.ims-bordeaux.fr" class="text-blue-600 hover:text-blue-800"> IMS Laboratory</a> in Bordeaux.
+                Before that, I obtained my Bachelor of Engineering (BEng) in Telecommunications from the Technological University of Panama, specializing in Signal Processing. I also worked as a research engineer at the <a href="http://gitts.utp.ac.pa/es/inicio/" class="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300"> Research Group on Advanced Technologies of Telecommunications and Signal Processing</a>, in Panama City, Panama. I have also done internships in other laboratories in France, such as <a href="https://laboratoirehubertcurien.univ-st-etienne.fr/en/index.html" class="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300"> Hubert Curien Laboratory</a> in Saint-Étienne, and the <a href="https://www.ims-bordeaux.fr" class="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300"> IMS Laboratory</a> in Bordeaux.
                 <br><br>
-                When I have time (and money) I travel and take analog photos, and I even used to be an <a href="https://www.youtube.com/watch?v=ZvSHeW-zhhE " class="text-blue-600 hover:text-blue-800"> audiovisual producer</a>! Anyways, welcome to my website. Feel free to reach out to me if you have any questions.
+                When I have time (and money) I travel and take analog photos, and I even used to be an <a href="https://www.youtube.com/watch?v=ZvSHeW-zhhE " class="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300"> audiovisual producer</a>! Anyways, welcome to my website. Feel free to reach out to me if you have any questions.
                 </p>
         </div>
     </div>
@@ -87,18 +101,18 @@
         <section id="news" class="mb-12">
             <h2 class="text-4xl font-bold mb-4">News</h2>
             <ul class="list-none">
-                <li class="bg-blue-50 p-2 rounded border-l-4 border-blue-500 mb-2">
-                    <span class="text-red-600 font-bold">NEW!</span> 
-                    <a href="https://presse.inserm.fr/en/biais-cognitifs-dans-le-soin-comment-lia-generative-pourrait-aider-a-ameliorer-la-prise-en-charge/70110/" class="text-blue-600 hover:text-blue-800 font-semibold">Check out the latest press release about our work!</a>
+                <li class="bg-blue-50 dark:bg-blue-900/30 p-2 rounded border-l-4 border-blue-500 mb-2">
+                    <span class="text-red-600 dark:text-red-400 font-bold">NEW!</span> 
+                    <a href="https://presse.inserm.fr/en/biais-cognitifs-dans-le-soin-comment-lia-generative-pourrait-aider-a-ameliorer-la-prise-en-charge/70110/" class="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 font-semibold">Check out the latest press release about our work!</a>
                 </li>
-                <li class="bg-blue-50 p-2 rounded border-l-4 border-blue-500 mb-2">
-                    <span href="https://youtu.be/HSR8lL-rjQM?si=CR5CIXGF-pILx_W7" class="text-red-600">03/04/2025:</span> Watch our recent presentation on synthetic medical data generation during the 2025 edition of Dataquitaine, in Bordeaux
+                <li class="bg-blue-50 dark:bg-blue-900/30 p-2 rounded border-l-4 border-blue-500 mb-2">
+                    <span href="https://youtu.be/HSR8lL-rjQM?si=CR5CIXGF-pILx_W7" class="text-red-600 dark:text-red-400">03/04/2025:</span> Watch our recent presentation on synthetic medical data generation during the 2025 edition of Dataquitaine, in Bordeaux
                 </li>
-                <li class="bg-blue-50 p-2 rounded border-l-4 border-blue-500 mb-2">
-                    <span class="text-red-600">17/12/2024:</span> My paper "Uncovering Judgment Biases in Emergency Triage: A Public Health Approach Based on Large Language Models" won Best Paper on the "Impact and Society" track at ML4H!
+                <li class="bg-blue-50 dark:bg-blue-900/30 p-2 rounded border-l-4 border-blue-500 mb-2">
+                    <span class="text-red-600 dark:text-red-400">17/12/2024:</span> My paper "Uncovering Judgment Biases in Emergency Triage: A Public Health Approach Based on Large Language Models" won Best Paper on the "Impact and Society" track at ML4H!
                 </li>
-                <li class="bg-blue-50 p-2 rounded border-l-4 border-blue-500 mb-2">
-                    <span class="text-red-600">23/10/2024:</span> We got a new publication accepted in JMIR AI - "Harnessing Moderate-Sized Language Models for Reliable Patient Data De-identification in Emergency Department Records".
+                <li class="bg-blue-50 dark:bg-blue-900/30 p-2 rounded border-l-4 border-blue-500 mb-2">
+                    <span class="text-red-600 dark:text-red-400">23/10/2024:</span> We got a new publication accepted in JMIR AI - "Harnessing Moderate-Sized Language Models for Reliable Patient Data De-identification in Emergency Department Records".
                 </li>
             </ul>
         </section>
@@ -117,16 +131,16 @@
             <p> <i> * = Equal contribution</i></p>
             <ul>
                 <li>
-                    <a href="https://proceedings.mlr.press/v259/guerra-adames25a.html" class="text-blue-600 hover:text-blue-800">Uncovering Judgment Biases in Emergency Triage: A Public Health Approach Based on Large Language Models</a>
+                    <a href="https://proceedings.mlr.press/v259/guerra-adames25a.html" class="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300">Uncovering Judgment Biases in Emergency Triage: A Public Health Approach Based on Large Language Models</a>
                     <br>
                     <b>Ariel Guerra-Adames</b>, Marta Avalos-Fernandez, Océane Doremus, Cédric Gil-Jardiné and Emmanuel Lagarde
                     <br>
                     <i>Proceedings of the 4th Machine Learning for Health Symposium, PMLR 259:420-439. 2025</i>
                     <br>
                     <div class="flex space-x-2 w-1/3">
-                        <button type="button" class="flex-1 px-1 py-1 bg-blue-400 text-white rounded hover:bg-blue-600 flex justify-center" onclick="show('abs1')">Abstract</button>
-                        <a href="https://raw.githubusercontent.com/mlresearch/v259/main/assets/guerra-adames25a/guerra-adames25a.pdf" class="flex-1 px-1 py-1 bg-blue-400 text-white rounded hover:bg-blue-600 flex justify-center">PDF</a>
-                        <button type="button" class="flex-1 px-1 py-1 bg-blue-400 text-white rounded hover:bg-blue-600 flex justify-center" onclick="show('bib1')">BibTeX</button>
+                        <button type="button" class="flex-1 px-1 py-1 bg-blue-400 dark:bg-blue-600 text-white rounded hover:bg-blue-600 dark:hover:bg-blue-500 flex justify-center" onclick="show('abs1')">Abstract</button>
+                        <a href="https://raw.githubusercontent.com/mlresearch/v259/main/assets/guerra-adames25a/guerra-adames25a.pdf" class="flex-1 px-1 py-1 bg-blue-400 dark:bg-blue-600 text-white rounded hover:bg-blue-600 dark:hover:bg-blue-500 flex justify-center">PDF</a>
+                        <button type="button" class="flex-1 px-1 py-1 bg-blue-400 dark:bg-blue-600 text-white rounded hover:bg-blue-600 dark:hover:bg-blue-500 flex justify-center" onclick="show('bib1')">BibTeX</button>
                     </div>
                     <div id="abs1" class="popup-abs" style="display: none;">
                         Judgment biases in emergency triage can adversely affect patient outcomes. This study examines sex/gender biases using four advanced language models fine-tuned on real-world emergency department data. We introduce a novel approach based on the testing method, commonly used in hiring bias detection, by automatically altering triage notes to change patient sex references. Results indicate a significant bias: female patients are assigned lower severity ratings than male patients with identical clinical conditions. This bias is more pronounced with female nurses or when patients report higher pain levels but diminishes with increased nurse experience. Identifying these biases can inform interventions such as enhanced training, protocol updates, and machine learning tools to support clinical decision-making. 
@@ -152,16 +166,16 @@
                     <br>
                 </li>
                 <li>
-                    <a href="https://journals.flvc.org/FLAIRS/article/view/135570" class="text-blue-600 hover:text-blue-800">AI-Driven Emergency Patient Flow Optimization is Both an Unmissable Opportunity and a Risk of Systematizing Health Disparities</a>
+                    <a href="https://journals.flvc.org/FLAIRS/article/view/135570" class="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300">AI-Driven Emergency Patient Flow Optimization is Both an Unmissable Opportunity and a Risk of Systematizing Health Disparities</a>
                     <br>
                     Dylan Russon, Marta Avalos-Fernandez, <b>Ariel Guerra-Adames</b>, Cédric Gil-Jardiné and Emmanuel Lagarde
                     <br>
                     <i>The International FLAIRS Conference Proceedings, 37(1). 2024</i>
                     <br>
                     <div class="flex space-x-2 w-1/3">
-                        <button type="button" class="flex-1 px-1 py-1 bg-blue-400 text-white rounded hover:bg-blue-600 flex justify-center" onclick="show('abs1')">Abstract</button>
-                        <a href="https://preprints.jmir.org/preprint/57828" class="flex-1 px-1 py-1 bg-blue-400 text-white rounded hover:bg-blue-600 flex justify-center">PDF</a>
-                        <button type="button" class="flex-1 px-1 py-1 bg-blue-400 text-white rounded hover:bg-blue-600 flex justify-center" onclick="show('bib1')">BibTeX</button>
+                        <button type="button" class="flex-1 px-1 py-1 bg-blue-400 dark:bg-blue-600 text-white rounded hover:bg-blue-600 dark:hover:bg-blue-500 flex justify-center" onclick="show('abs1')">Abstract</button>
+                        <a href="https://preprints.jmir.org/preprint/57828" class="flex-1 px-1 py-1 bg-blue-400 dark:bg-blue-600 text-white rounded hover:bg-blue-600 dark:hover:bg-blue-500 flex justify-center">PDF</a>
+                        <button type="button" class="flex-1 px-1 py-1 bg-blue-400 dark:bg-blue-600 text-white rounded hover:bg-blue-600 dark:hover:bg-blue-500 flex justify-center" onclick="show('bib1')">BibTeX</button>
                     </div>
                     <div id="abs1" class="popup-abs" style="display: none;">
                         There is a burgeoning interest in harnessing artificial intelligence (AI) to enhance patient flow within emergency departments (EDs). However, this advancement is accompanied by a significant risk: by relying on historical healthcare data, these AI tools may perpetuate existing systemic biases associated with gender, age, ethnicity, and socioeconomic status. This paper surveys studies identifying biases in ED data, offering context for concern about these biases. These insights are valuable for researchers developing AI to optimize ED workflows while accounting for ethical considerations.
@@ -178,16 +192,16 @@
                     <br>
                 </li>
                 <li>
-                    <a href="https://preprints.jmir.org/preprint/57828" class="text-blue-600 hover:text-blue-800">Harnessing Moderate-Sized Language Models for Reliable Patient Data De-identification in Emergency Department Records: An Evaluation of Strategies and Performance (Preprint)</a>
+                    <a href="https://preprints.jmir.org/preprint/57828" class="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300">Harnessing Moderate-Sized Language Models for Reliable Patient Data De-identification in Emergency Department Records: An Evaluation of Strategies and Performance (Preprint)</a>
                     <br>
                     Océane Dorémus, Dylan Russon, Benjamin Contrand, <b>Ariel Guerra-Adames</b>, Marta Avalos-Fernandez, Cédric Gil-Jardiné et Emmanuel Lagarde
                     <br>
                     <i>JMIR AI, 2024.</i>
                     <br>
                     <div class="flex space-x-2 w-1/3">
-                        <button type="button" class="flex-1 px-1 py-1 bg-blue-400 text-white rounded hover:bg-blue-600 flex justify-center" onclick="show('abs1')">Abstract</button>
-                        <a href="https://preprints.jmir.org/preprint/57828" class="flex-1 px-1 py-1 bg-blue-400 text-white rounded hover:bg-blue-600 flex justify-center">PDF</a>
-                        <button type="button" class="flex-1 px-1 py-1 bg-blue-400 text-white rounded hover:bg-blue-600 flex justify-center" onclick="show('bib1')">BibTeX</button>
+                        <button type="button" class="flex-1 px-1 py-1 bg-blue-400 dark:bg-blue-600 text-white rounded hover:bg-blue-600 dark:hover:bg-blue-500 flex justify-center" onclick="show('abs1')">Abstract</button>
+                        <a href="https://preprints.jmir.org/preprint/57828" class="flex-1 px-1 py-1 bg-blue-400 dark:bg-blue-600 text-white rounded hover:bg-blue-600 dark:hover:bg-blue-500 flex justify-center">PDF</a>
+                        <button type="button" class="flex-1 px-1 py-1 bg-blue-400 dark:bg-blue-600 text-white rounded hover:bg-blue-600 dark:hover:bg-blue-500 flex justify-center" onclick="show('bib1')">BibTeX</button>
                     </div>
                     <div id="abs1" class="popup-abs" style="display: none;">
                         The digitization of healthcare, facilitated by the adoption of electronic health record (EHR) systems, has revolutionized data-driven medical research and patient care. While this digital transformation offers substantial benefits in healthcare efficiency and accessibility, it concurrently raises significant concerns over privacy and data security. Initially, the journey towards protecting patient data de-identification saw the transition from rule-based systems to more mixed approaches including machine learning for de-identifying patient data. Subsequently, the emergence of Large Language Models (LLMs) has represented a further opportunity in this domain, offering unparalleled potential for enhancing the accuracy of context-sensitive de-identification. However, despite LLMs offering significant potential, the deployment of the most advanced models in hospital environments is frequently hindered by data security issues and the extensive hardware resources required.
@@ -203,16 +217,16 @@
                     <br>
                 </li>
                 <li>
-                    <a href="https://www.mdpi.com/1785104" class="text-blue-600 hover:text-blue-800">Analyzing Spanish-Language Public Sentiment in the Context of a Pandemic and Social Unrest: The Panama Case</a>
+                    <a href="https://www.mdpi.com/1785104" class="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300">Analyzing Spanish-Language Public Sentiment in the Context of a Pandemic and Social Unrest: The Panama Case</a>
                     <br>
                     Fernando Arias*, <b>Ariel Guerra-Adames*</b>, Maytee Zambrano, Efraín Quintero-Guerra and Nathalia Tejedor-Flores.
                     <br>
                     <i>International Journal of Environmental Research and Public Health. 2022.</i>
                     <br>
                     <div class="flex space-x-2 w-1/3">
-                        <button type="button" class="flex-1 px-1 py-1 bg-blue-400 text-white rounded hover:bg-blue-600 flex justify-center" onclick="show('abs1')">Abstract</button>
-                        <a href="https://www.mdpi.com/1660-4601/19/16/10328/pdf" class="flex-1 px-1 py-1 bg-blue-400 text-white rounded hover:bg-blue-600 flex justify-center">PDF</a>
-                        <button type="button" class="flex-1 px-1 py-1 bg-blue-400 text-white rounded hover:bg-blue-600 flex justify-center" onclick="show('bib1')">BibTeX</button>
+                        <button type="button" class="flex-1 px-1 py-1 bg-blue-400 dark:bg-blue-600 text-white rounded hover:bg-blue-600 dark:hover:bg-blue-500 flex justify-center" onclick="show('abs1')">Abstract</button>
+                        <a href="https://www.mdpi.com/1660-4601/19/16/10328/pdf" class="flex-1 px-1 py-1 bg-blue-400 dark:bg-blue-600 text-white rounded hover:bg-blue-600 dark:hover:bg-blue-500 flex justify-center">PDF</a>
+                        <button type="button" class="flex-1 px-1 py-1 bg-blue-400 dark:bg-blue-600 text-white rounded hover:bg-blue-600 dark:hover:bg-blue-500 flex justify-center" onclick="show('bib1')">BibTeX</button>
                     </div>
                     <div id="abs1" class="popup-abs" style="display: none;">
                         Over the past decade, an increase in global connectivity and social media users has changed the way in which opinions and sentiments are shared. Platforms such as Twitter can act as public forums for expressing opinions on non-personal matters, but often also as an outlet for individuals to share their feelings and personal thoughts. This becomes especially evident during times of crisis, such as a massive civil disorder or a pandemic. This study proposes the estimation and analysis of sentiments expressed by Twitter users of the Republic of Panama during the years 2019 and 2020. The proposed workflow is comprised of the extraction, quantification, processing and analysis of Spanish-language Twitter data based on Sentiment Analysis. This case of study highlights the importance of developing natural language processing resources explicitly devised for supporting opinion mining applications in Latin American countries, where language regionalisms can drastically change the lexicon on each country. A comparative analysis performed between popular machine learning algorithms demonstrated that a version of a distributed gradient boosting algorithm could infer sentiment polarity contained in Spanish text in an accurate and time-effective manner. This algorithm is the tool used to analyze over 20 million tweets produced between the years of 2019 and 2020 by residents of the Republic of Panama, accurately displaying strong sentiment responses to events occurred in the country over the two years that the analysis performed spanned. The obtained results highlight the potential that methodologies such as the one proposed in this study could have for transparent government monitoring of responses to public policies on a population scale.
@@ -232,16 +246,16 @@
                     <br>
                 </li>
                 <li>
-                    <a href="https://ieeexplore.ieee.org/abstract/document/9810923" class="text-blue-600 hover:text-blue-800">Sentiment Analysis of Public Social Media as a Tool for Health-Related Topics</a>
+                    <a href="https://ieeexplore.ieee.org/abstract/document/9810923" class="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300">Sentiment Analysis of Public Social Media as a Tool for Health-Related Topics</a>
                     <br>
                     Fernando Arias, Maytee Zambrano, <b>Ariel Guerra-Adames</b>, Nathalia Tejedor-Flores and Miguel Vargas-Lombardo.
                     <br>
                     <i>IEEE Access. June 2022.</i>
                     <br>
                     <div class="flex space-x-2 w-1/3">
-                        <button type="button" class="flex-1 px-1 py-1 bg-blue-400 text-white rounded hover:bg-blue-600 flex justify-center" onclick="show('abs2')">Abstract</button>
-                        <a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=9810923" class="flex-1 px-1 py-1 bg-blue-400 text-white rounded hover:bg-blue-600 flex justify-center">PDF</a>
-                        <button type="button" class="flex-1 px-1 py-1 bg-blue-400 text-white rounded hover:bg-blue-600 flex justify-center" onclick="show('bib2')">BibTeX</button>
+                        <button type="button" class="flex-1 px-1 py-1 bg-blue-400 dark:bg-blue-600 text-white rounded hover:bg-blue-600 dark:hover:bg-blue-500 flex justify-center" onclick="show('abs2')">Abstract</button>
+                        <a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=9810923" class="flex-1 px-1 py-1 bg-blue-400 dark:bg-blue-600 text-white rounded hover:bg-blue-600 dark:hover:bg-blue-500 flex justify-center">PDF</a>
+                        <button type="button" class="flex-1 px-1 py-1 bg-blue-400 dark:bg-blue-600 text-white rounded hover:bg-blue-600 dark:hover:bg-blue-500 flex justify-center" onclick="show('bib2')">BibTeX</button>
                     </div>
                     <div id="abs2" class="popup-abs" style="display: none;">
                         For decades, researchers have experimented with the possibility that machines can equal human linguistic capabilities. Recently, advances in the field of natural language processing (NLP) as well as a substantial increase in available naturally occurring linguistic data on social media platforms have made more advanced methodologies such as sentiment analysis (SA) gain substantial momentum on contemporary applications. This document compiles what the authors consider to be some of the most important concepts related to SA, as well as techniques and processes necessary for the various stages of its implementation. Furthermore, specific applications related to the extraction and classification of social media data using novel SA techniques are presented and quantified, with an emphasis on those used for the identification of mental health degradation during the COVID-19 pandemic. Finally, the authors present several conclusions highlighting the most prominent benefits and drawbacks of the methods discussed, followed by a brief discussion of possible future applications of certain methods of interest.
@@ -260,16 +274,16 @@
                     <br>
                 </li>
                 <li>
-                    <a href="https://ieeexplore.ieee.org/abstract/document/9757788" class="text-blue-600 hover:text-blue-800">Control of a Simulated Terrestrial Vehicle Through the Real-Time Processing and Classification of Electroencephalogram Data</a>
+                    <a href="https://ieeexplore.ieee.org/abstract/document/9757788" class="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300">Control of a Simulated Terrestrial Vehicle Through the Real-Time Processing and Classification of Electroencephalogram Data</a>
                     <br>
                     <b>Ariel Guerra-Adames</b>, Danilo Cáceres and Fernando Merchan.
                     <br>
                     <i>Global Medical Engineering Physics Exchanges/Pan American Health Care Exchanges (GMEPE/PAHCE). March 2022.</i>
                     <br>
                     <div class="flex space-x-2 w-1/3">
-                        <button type="button" class="flex-1 px-1 py-1 bg-blue-400 text-white rounded hover:bg-blue-600 flex justify-center" onclick="show('abs3')">Abstract</button>
-                        <a href="NOLINK" class="flex-1 px-1 py-1 bg-blue-400 text-white rounded hover:bg-blue-600 flex justify-center">PDF</a>
-                        <button type="button" class="flex-1 px-1 py-1 bg-blue-400 text-white rounded hover:bg-blue-600 flex justify-center" onclick="show('bib3')">BibTeX</button>
+                        <button type="button" class="flex-1 px-1 py-1 bg-blue-400 dark:bg-blue-600 text-white rounded hover:bg-blue-600 dark:hover:bg-blue-500 flex justify-center" onclick="show('abs3')">Abstract</button>
+                        <a href="NOLINK" class="flex-1 px-1 py-1 bg-blue-400 dark:bg-blue-600 text-white rounded hover:bg-blue-600 dark:hover:bg-blue-500 flex justify-center">PDF</a>
+                        <button type="button" class="flex-1 px-1 py-1 bg-blue-400 dark:bg-blue-600 text-white rounded hover:bg-blue-600 dark:hover:bg-blue-500 flex justify-center" onclick="show('bib3')">BibTeX</button>
                     </div>
                     <div id="abs3" class="popup-abs" style="display: none;">
                         In recent years and in parallel with advances in commercially available computing power, the brain computer interface (BCI) has emerged as a new use for the information obtained from existing electroencephalogram (EEG) acquisition technologies. This system works as a communication pathway between an individual’s central nervous system and a computing unit. The BCI described in this study has as primary directive the control of a simulated vehicle, for which it utilizes both neurological activity associated to an individual’s state of focus in the frequency domain, as well as artifacts produced by intentional blinks, found in the time domain. In order to successfully translate the user’s intention into commands, the acquired signals are spectrally and temporally pre-processed, features of interest are extracted by means of the wavelet packet decomposition (WPD), and are finally fed into a convolutional neural network (CNN) model, which outputs recursive predictions about the user’s mental state. The set of these general steps is capable of emitting navigational commands to the vehicle, and at the same time, return a user’s focus state related to the task in hand in the form of a visual feedback loop. Tests performed with the complete system, demonstrate that a system as the one proposed is satisfactorily functional, being capable of carrying the user’s intent to the simulated vehicle with a latency and margin of error within what’s expected for BCI applications based on EEG readings.
@@ -287,16 +301,16 @@
                     <br>
                 </li>
                 <li>
-                    <a href="https://ieeexplore.ieee.org/abstract/document/9152264" class="text-blue-600 hover:text-blue-800">Real Time Operator Focus Monitoring System Based on a Brain-Computer Interface</a>
+                    <a href="https://ieeexplore.ieee.org/abstract/document/9152264" class="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300">Real Time Operator Focus Monitoring System Based on a Brain-Computer Interface</a>
                     <br>
                     <b>Ariel Guerra-Adames</b>, Danilo Cáceres, Fernando Merchan and Kang-Hyun Jo.
                     <br>
                     <i>IEEE 29th International Symposium on Industrial Electronics (ISIE). June 2020.</i>
                     <br>
                     <div class="flex space-x-2 w-1/3">
-                        <button type="button" class="flex-1 px-1 py-1 bg-blue-400 text-white rounded hover:bg-blue-600 flex justify-center" onclick="show('abs4')">Abstract</button>
-                        <a href="NOLINK" class="flex-1 px-1 py-1 bg-blue-400 text-white rounded hover:bg-blue-600 flex justify-center">PDF</a>
-                        <button type="button" class="flex-1 px-1 py-1 bg-blue-400 text-white rounded hover:bg-blue-600 flex justify-center" onclick="show('bib4')">BibTeX</button>
+                        <button type="button" class="flex-1 px-1 py-1 bg-blue-400 dark:bg-blue-600 text-white rounded hover:bg-blue-600 dark:hover:bg-blue-500 flex justify-center" onclick="show('abs4')">Abstract</button>
+                        <a href="NOLINK" class="flex-1 px-1 py-1 bg-blue-400 dark:bg-blue-600 text-white rounded hover:bg-blue-600 dark:hover:bg-blue-500 flex justify-center">PDF</a>
+                        <button type="button" class="flex-1 px-1 py-1 bg-blue-400 dark:bg-blue-600 text-white rounded hover:bg-blue-600 dark:hover:bg-blue-500 flex justify-center" onclick="show('bib4')">BibTeX</button>
                     </div>
                     <div id="abs4" class="popup-abs" style="display: none;">
                         Recent advances in applications of Brain-Computer Interfaces (BCIs) for control and communication in more complex systems have demonstrated their potential for the augmentation of human cognition. This paper aims to develop a BrainComputer Interface application capable of monitoring the focus level of a user in real time and produce a binarized output signal based on such electrophysiological activity to show that a real-time, low-cost BCI can be implemented in industrialized settings. This can be achieved by applying a signal processing stage consisting of a DC offset subtraction layer, a bandpass filter bank and a number of thresholds tuned for each individual user. Experiments performed showed that while it is possible to monitor the desired neurological features, a number of undesired artifacts present at all times in brain signals make online analysis especially challenging.</div>
@@ -313,16 +327,16 @@
                     <br>
                 </li>
                 <li>
-                    <a href="https://www.mdpi.com/2076-3417/10/9/3286" class="text-blue-600 hover:text-blue-800">Bioacoustic classification of Antillean manatee vocalization spectrograms using deep convolutional neural networks</a>
+                    <a href="https://www.mdpi.com/2076-3417/10/9/3286" class="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300">Bioacoustic classification of Antillean manatee vocalization spectrograms using deep convolutional neural networks</a>
                     <br>
                     Fernando Merchan, <b>Ariel Guerra-Adames</b>, Héctor Poveda, Héctor M. Guzman and Javier E. Sanchez-Galan.
                     <br>
                     <i>Applied Sciences. May 2020.</i>
                     <br>
                     <div class="flex space-x-2 w-1/3">
-                        <button type="button" class="flex-1 px-1 py-1 bg-blue-400 text-white rounded hover:bg-blue-600 flex justify-center" onclick="show('abs5')">Abstract</button>
-                        <a href="https://www.mdpi.com/2076-3417/10/9/3286/pdf" class="flex-1 px-1 py-1 bg-blue-400 text-white rounded hover:bg-blue-600 flex justify-center">PDF</a>
-                        <button type="button" class="flex-1 px-1 py-1 bg-blue-400 text-white rounded hover:bg-blue-600 flex justify-center" onclick="show('bib5')">BibTeX</button>
+                        <button type="button" class="flex-1 px-1 py-1 bg-blue-400 dark:bg-blue-600 text-white rounded hover:bg-blue-600 dark:hover:bg-blue-500 flex justify-center" onclick="show('abs5')">Abstract</button>
+                        <a href="https://www.mdpi.com/2076-3417/10/9/3286/pdf" class="flex-1 px-1 py-1 bg-blue-400 dark:bg-blue-600 text-white rounded hover:bg-blue-600 dark:hover:bg-blue-500 flex justify-center">PDF</a>
+                        <button type="button" class="flex-1 px-1 py-1 bg-blue-400 dark:bg-blue-600 text-white rounded hover:bg-blue-600 dark:hover:bg-blue-500 flex justify-center" onclick="show('bib5')">BibTeX</button>
                     </div>
                     <div id="abs5" class="popup-abs" style="display: none;">
                         We evaluated the potential of using convolutional neural networks in classifying spectrograms of Antillean manatee (Trichechus manatus manatus) vocalizations. Spectrograms using binary, linear and logarithmic amplitude formats were considered. Two deep convolutional neural networks (DCNN) architectures were tested: linear (fixed filter size) and pyramidal (incremental filter size). Six experiments were devised for testing the accuracy obtained for each spectrogram representation and architecture combination. Results show that binary spectrograms with both linear and pyramidal architectures with dropout provide a classification rate of 94–99% on the training and 92–98% on the testing set, respectively. The pyramidal network presents a shorter training and inference time. Results from the convolutional neural networks (CNN) are substantially better when compared with a signal processing fast Fourier transform (FFT)-based harmonic search approach in terms of accuracy and F1 Score. Taken together, these results prove the validity of using spectrograms and using DCNNs for manatee vocalization classification. These results can be used to improve future software and hardware implementations for the estimation of the manatee population in Panama.</div>
@@ -346,44 +360,44 @@
             <h2 class="text-4xl font-bold mb-4">Talks & Presentations</h2>
             <ul>
                 <li>
-                    <a class="px-2 py-1 bg-blue-400 text-white rounded">Apr 2025</a>
+                    <a class="px-2 py-1 bg-blue-400 dark:bg-blue-600 text-white rounded">Apr 2025</a>
                     <a href="https://youtu.be/HSR8lL-rjQM?si=0a7faqAtUAz4NKB0" target="_blank"> <b>"Synthetic Medical Data Generation : State of the art and application to trauma mechanism clssification"</b> at Dataquitaine 2025, Bordeaux, France</a>
                 </li>
                 <br>
                 <li>
-                    <a class="px-2 py-1 bg-blue-400 text-white rounded">Dec 2024</a>
+                    <a class="px-2 py-1 bg-blue-400 dark:bg-blue-600 text-white rounded">Dec 2024</a>
                     <a href="https://ahli.cc/ml4h/schedule/" class="px-2 py-1 bg-yellow-300 text-white rounded hover:bg-yellow-500">🏆 Best Paper Award 🏆</a>
                     <a href="https://ahli.cc/ml4h/schedule/" target="_blank"> <b>"Uncovering Judgment Biases in Emergency Triage: A Public Health Approach Based on Large Language Models"</b> at ML4H Symposium, Vancouver, Canada</a>
                 </li>
                 <br>
                 <li>
-                    <a class="px-2 py-1 bg-blue-400 text-white rounded">Jul 2024</a>
+                    <a class="px-2 py-1 bg-blue-400 dark:bg-blue-600 text-white rounded">Jul 2024</a>
                     <a href="https://evalllm2024.sciencesconf.org/resource/page/id/4" target="_blank"> <b>"Réflexions pour la conception d'un protocole expérimental de détection des biais dans le triage d'urgence hospitalière à l'aide de modèles de langage"</b> at EvalLLM2024, Toulouse, France</a>
                 </li>
                 <br>
                 <li>
-                    <a class="px-2 py-1 bg-blue-400 text-white rounded">Mar 2024</a>
+                    <a class="px-2 py-1 bg-blue-400 dark:bg-blue-600 text-white rounded">Mar 2024</a>
                     <a href="https://www.youtube.com/watch?v=3gTIczo8qDo&t=990s" target="_blank"> <b>"Optimisation des services des urgences hospitalières à l'aide de l'IA : une opportunité incontournable et un risque de systématisation des disparités de santé"</b> at Dataquitaine 2024, Bordeaux, France</a>
                 </li>
                 <br>
                 <li>
-                    <a class="px-2 py-1 bg-blue-400 text-white rounded"> Jan 2024</a>
+                    <a class="px-2 py-1 bg-blue-400 dark:bg-blue-600 text-white rounded"> Jan 2024</a>
                     <a href="https://manutech-sleight.com/scientific-events/the-sleight-science-events/sse-11-sleight-in-2024/sse-11-7-master-students-presented-with-the-best-pitch-award--332438.kjsp?RH=28499651752844573" class="px-2 py-1 bg-yellow-300 text-white rounded hover:bg-yellow-500">🏆 Best Pitch Award🏆</a>
                     <a href="https://www.youtube.com/watch?v=kr2MCAi7wrA" target="_blank"> <b>"Learning PDEs from Data: Can We Solve the Non-registration Issue?"</b> at Manutech SLEIGHT Science Event #11, Saint-Étienne, France</a>
                 </li>
                 <br>
                 <li>
-                    <a class="px-2 py-1 bg-blue-400 text-white rounded">Jun 2021</a>
+                    <a class="px-2 py-1 bg-blue-400 dark:bg-blue-600 text-white rounded">Jun 2021</a>
                     <a href="https://doi.org/10.33412/apanac.2021.3237" target="_blank"> <b>"Control de un Vehículo Mediante el Procesamiento e Interpretación en Tiempo Real de Señales de Electroencefalografía"</b> at APANAC 2021, Panama City, Panama</a>
                 </li>
             </ul>
         </section>
     </main>
 
-    <footer class="bg-white">
+    <footer class="bg-white dark:bg-gray-800 transition-colors duration-300">
         <div class="container mx-auto px-6 py-4">
-            <p class="text-gray-700">&copy; Copyright Ariel Guerra-Adames 2025</p>
-            <p class="text-gray-700" id="lastUpdated">Last updated </p>
+            <p class="text-gray-700 dark:text-gray-300">&copy; Copyright Ariel Guerra-Adames 2025</p>
+            <p class="text-gray-700 dark:text-gray-300" id="lastUpdated">Last updated </p>
         </div>
     </footer>
 
