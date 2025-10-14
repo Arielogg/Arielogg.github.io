@@ -71,7 +71,7 @@
     <!-- Masthead -->
     <div class="container mx-auto flex flex-col md:flex-row items-center py-12 md:py-24">
         <div class="md:w-1/3 flex flex-col items-center md:items-start">
-            <img id="profile-pic" src="profile.JPG" alt="a photo of me" class="w-4/5 mb-4 mx-auto mt-8">
+            <img id="profile-pic" src="profile.JPG" alt="a photo of me" class="w-1/2 mb-4 mx-auto mt-8">
             <div class="mx-auto">
                 <h1 class="text-4xl text-center mb-4">Hey, I'm Ariel<br>Guerra-Adames</h1>
                 <p class="text-center mb-4 text-gray-600 dark:text-gray-400">ariel.guerra-adames [at] u-bordeaux.fr</p>
@@ -100,27 +100,32 @@
         <!-- News Section -->
         <section id="news" class="mb-12">
             <h2 class="text-4xl font-bold mb-4">News</h2>
-            <ul class="list-none">
-                <li class="bg-blue-50 dark:bg-blue-900/30 p-2 rounded border-l-4 border-blue-500 mb-2">
-                    <span class="text-red-600 dark:text-red-400">11/07/2025:</span> I was invited to the University of Kyoto by Professor Taku Iwami to collaborate on a new LLM-based companion app for sudden cardiac death prediction.
-                </li>
-                <li class="bg-blue-50 dark:bg-blue-900/30 p-2 rounded border-l-4 border-blue-500 mb-2">
-                    <span class="text-red-600 dark:text-red-400">16/06/2025:</span> I was invited to the Institut de mathématiques de Toulouse by Jean Michel Loubès to collaborate on a novel optimal transport part of my thesis.
-                </li>
-                <li class="bg-blue-50 dark:bg-blue-900/30 p-2 rounded border-l-4 border-blue-500 mb-2">
-                    <span class="text-red-600 dark:text-red-400 font-bold">NEW!</span> 
-                    <a href="https://presse.inserm.fr/en/biais-cognitifs-dans-le-soin-comment-lia-generative-pourrait-aider-a-ameliorer-la-prise-en-charge/70110/" class="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 font-semibold">Check out the latest press release about our work!</a>
-                </li>
-                <li class="bg-blue-50 dark:bg-blue-900/30 p-2 rounded border-l-4 border-blue-500 mb-2">
-                    <span class="text-red-600 dark:text-red-400">03/04/2025:</span> Watch our recent presentation on synthetic medical data generation during the 2025 edition of Dataquitaine, in Bordeaux
-                </li>
-                <li class="bg-blue-50 dark:bg-blue-900/30 p-2 rounded border-l-4 border-blue-500 mb-2">
-                    <span class="text-red-600 dark:text-red-400">17/12/2024:</span> My paper "Uncovering Judgment Biases in Emergency Triage: A Public Health Approach Based on Large Language Models" won Best Paper on the "Impact and Society" track at ML4H!
-                </li>
-                <li class="bg-blue-50 dark:bg-blue-900/30 p-2 rounded border-l-4 border-blue-500 mb-2">
-                    <span class="text-red-600 dark:text-red-400">23/10/2024:</span> We got a new publication accepted in JMIR AI - "Harnessing Moderate-Sized Language Models for Reliable Patient Data De-identification in Emergency Department Records".
-                </li>
-            </ul>
+            <div class="max-h-40 overflow-y-auto">
+                <ul class="list-none">
+                    <li class="bg-blue-50 dark:bg-blue-900/30 p-2 rounded border-l-4 border-blue-500 mb-2">
+                        <span class="text-red-600 dark:text-red-400">16/10/2025:</span> I was invited to give a seminar at the Centre d'Épidémiologie et de Recherche en Santé des Populations at the University of Toulouse.
+                    </li>
+                    <li class="bg-blue-50 dark:bg-blue-900/30 p-2 rounded border-l-4 border-blue-500 mb-2">
+                        <span class="text-red-600 dark:text-red-400">11/07/2025:</span> I was invited to the University of Kyoto by Professor Taku Iwami to collaborate on a new LLM-based companion app for sudden cardiac death prediction.
+                    </li>
+                    <li class="bg-blue-50 dark:bg-blue-900/30 p-2 rounded border-l-4 border-blue-500 mb-2">
+                        <span class="text-red-600 dark:text-red-400">16/06/2025:</span> I was invited to the Institut de mathématiques de Toulouse by Jean Michel Loubès to collaborate on a novel optimal transport part of my thesis.
+                    </li>
+                    <li class="bg-blue-50 dark:bg-blue-900/30 p-2 rounded border-l-4 border-blue-500 mb-2">
+                        <span class="text-red-600 dark:text-red-400 font-bold">NEW!</span> 
+                        <a href="https://presse.inserm.fr/en/biais-cognitifs-dans-le-soin-comment-lia-generative-pourrait-aider-a-ameliorer-la-prise-en-charge/70110/" class="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 font-semibold">Check out the latest press release about our work!</a>
+                    </li>
+                    <li class="bg-blue-50 dark:bg-blue-900/30 p-2 rounded border-l-4 border-blue-500 mb-2">
+                        <span class="text-red-600 dark:text-red-400">03/04/2025:</span> Watch our recent presentation on synthetic medical data generation during the 2025 edition of Dataquitaine, in Bordeaux
+                    </li>
+                    <li class="bg-blue-50 dark:bg-blue-900/30 p-2 rounded border-l-4 border-blue-500 mb-2">
+                        <span class="text-red-600 dark:text-red-400">17/12/2024:</span> My paper "Uncovering Judgment Biases in Emergency Triage: A Public Health Approach Based on Large Language Models" won Best Paper on the "Impact and Society" track at ML4H!
+                    </li>
+                    <li class="bg-blue-50 dark:bg-blue-900/30 p-2 rounded border-l-4 border-blue-500 mb-2">
+                        <span class="text-red-600 dark:text-red-400">23/10/2024:</span> We got a new publication accepted in JMIR AI - "Harnessing Moderate-Sized Language Models for Reliable Patient Data De-identification in Emergency Department Records".
+                    </li>
+                </ul>
+            </div>
         </section>
 
         <section id="research" class="mb-12">
@@ -137,11 +142,36 @@
             <p> <i> * = Equal contribution</i></p>
             <ul>
                 <li>
+                    <a href="https://arxiv.org/abs/2510.10338" class="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300">Beyond Ethics: How Inclusive Innovation Drives Economic Returns in Medical AI</a>
+                    <br>
+                    Balagopal Unnikrishnan*, <b>Ariel Guerra-Adames*</b>, Amin Adibi*, Sameer Peesapati, Rafal Kocielnik, Shira Fischer, Hillary Clinton Kasimbazi, Rodrigo Gameiro, Alina Peluso, Chrystinne Oliveira Fernandes, Maximin Lange, Lovedeep Gondara, Leo Anthony Celi
+                    <br>
+                    <i>arXiv preprint arXiv:2510.10338. 2025</i>
+                    <br>
+                    <div class="flex space-x-2 w-1/3">
+                        <button type="button" class="flex-1 px-1 py-1 bg-blue-400 dark:bg-blue-600 text-white rounded hover:bg-blue-600 dark:hover:bg-blue-500 flex justify-center" onclick="show('abs7')">Abstract</button>
+                        <a href="https://arxiv.org/pdf/2510.10338" class="flex-1 px-1 py-1 bg-blue-400 dark:bg-blue-600 text-white rounded hover:bg-blue-600 dark:hover:bg-blue-500 flex justify-center">PDF</a>
+                        <button type="button" class="flex-1 px-1 py-1 bg-blue-400 dark:bg-blue-600 text-white rounded hover:bg-blue-600 dark:hover:bg-blue-500 flex justify-center" onclick="show('bib7')">BibTeX</button>
+                    </div>
+                    <div id="abs7" class="popup-abs" style="display: none;">
+                        While ethical arguments for fairness in healthcare AI are well-established, the economic and strategic value of inclusive design remains underexplored. This perspective introduces the "inclusive innovation dividend" -- the counterintuitive principle that solutions engineered for diverse, constrained use cases generate superior economic returns in broader markets. Drawing from assistive technologies that evolved into billion-dollar mainstream industries, we demonstrate how inclusive healthcare AI development creates business value beyond compliance requirements. We identify four mechanisms through which inclusive innovation drives returns: (1) market expansion via geographic scalability and trust acceleration; (2) risk mitigation through reduced remediation costs and litigation exposure; (3) performance dividends from superior generalization and reduced technical debt, and (4) competitive advantages in talent acquisition and clinical adoption. We present the Healthcare AI Inclusive Innovation Framework (HAIIF), a practical scoring system that enables organizations to evaluate AI investments based on their potential to capture these benefits. HAIIF provides structured guidance for resource allocation, transforming fairness and inclusivity from regulatory checkboxes into sources of strategic differentiation. Our findings suggest that organizations investing incrementally in inclusive design can achieve expanded market reach and sustained competitive advantages, while those treating these considerations as overhead face compounding disadvantages as network effects and data advantages accrue to early movers.
+                    </div>
+                    <div id="bib7" class="popup" style="display: none;">
+                        @article{unnikrishnan2025beyond,
+                            title={Beyond Ethics: How Inclusive Innovation Drives Economic Returns in Medical AI},
+                            author={Unnikrishnan, Balagopal and Guerra-Adames, Ariel and Adibi, Amin and Peesapati, Sameer and Kocielnik, Rafal and Fischer, Shira and Kasimbazi, Hillary Clinton and Gameiro, Rodrigo and Peluso, Alina and Fernandes, Chrystinne Oliveira and Lange, Maximin and Gondara, Lovedeep and Celi, Leo Anthony},
+                            journal={arXiv preprint arXiv:2510.10338},
+                            year={2025}
+                        }
+                    </div>
+                    <br>
+                </li>
+                <li>
                     <a href="https://arxiv.org/abs/2508.02771" class="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300">Synthetic medical data generation: state of the art and application to trauma mechanism classification</a>
                     <br>
-                    Océane Dorémus, <b>Ariel Guerra-Adames</b>, Marta Avalos-Fernandez, Valentin Jouhet, Cédric Gil-Jardiné and Emmanuel Lagarde
+                    Océane Dorémus*, <b>Ariel Guerra-Adames*</b>, Marta Avalos-Fernandez, Valentin Jouhet, Cédric Gil-Jardiné and Emmanuel Lagarde
                     <br>
-                    <i>arXiv preprint arXiv:2508.02771. 2025</i>
+                    <i>Proceedings of CIBB 2025. 2025</i>
                     <br>
                     <div class="flex space-x-2 w-1/3">
                         <button type="button" class="flex-1 px-1 py-1 bg-blue-400 dark:bg-blue-600 text-white rounded hover:bg-blue-600 dark:hover:bg-blue-500 flex justify-center" onclick="show('abs6')">Abstract</button>
@@ -152,10 +182,10 @@
                         This paper provides a comprehensive review of synthetic medical data generation techniques, with a focus on their application to trauma mechanism classification. We explore various generative models and their effectiveness in creating realistic medical datasets while addressing privacy and data scarcity challenges.
                     </div>
                     <div id="bib6" class="popup" style="display: none;">
-                        @article{doremus2025synthetic,
+                        @InProceedings{doremus2025synthetic,
                             title={Synthetic medical data generation: state of the art and application to trauma mechanism classification},
                             author={Dor{\'e}mus, Oc{\'e}ane and Guerra-Adames, Ariel and Avalos-Fernandez, Marta and Jouhet, Valentin and Gil-Jardin{\'e}, C{\'e}dric and Lagarde, Emmanuel},
-                            journal={arXiv preprint arXiv:2508.02771},
+                            booktitle={Proceedings of CIBB 2025},
                             year={2025}
                         }
                     </div>
