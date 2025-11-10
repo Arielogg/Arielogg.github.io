@@ -129,10 +129,14 @@ document.addEventListener('DOMContentLoaded', function() {
     const fishAudio = document.getElementById('fish-audio');
     if (fish && fishAudio) {
         fish.addEventListener('click', function() {
+            console.log('Fish clicked! Audio paused:', fishAudio.paused);
             if (fishAudio.paused) {
-                fishAudio.play();
+                fishAudio.play()
+                    .then(() => console.log('Audio playing'))
+                    .catch(error => console.error('Audio play error:', error));
             } else {
                 fishAudio.pause();
+                console.log('Audio paused');
             }
         });
     }
