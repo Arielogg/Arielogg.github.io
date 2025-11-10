@@ -123,4 +123,17 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     fetchLastCommitDate();
+
+    // Fish song on click
+    const fish = document.getElementById('spinning-fish');
+    const fishAudio = document.getElementById('fish-audio');
+    if (fish && fishAudio) {
+        fish.addEventListener('click', function() {
+            if (fishAudio.paused) {
+                fishAudio.play();
+            } else {
+                fishAudio.pause();
+            }
+        });
+    }
 });

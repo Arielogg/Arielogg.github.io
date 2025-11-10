@@ -48,6 +48,19 @@
         .theme-toggle:hover {
             transform: scale(1.1);
         }
+        .spinning-fish {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 200px;
+            height: auto;
+            z-index: 9999;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+        .spinning-fish:hover {
+            transform: scale(1.1);
+        }
     </style>
 </head>
 <body class="bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-300">
@@ -461,6 +474,10 @@
             <p class="text-gray-700 dark:text-gray-300" id="lastUpdated">Last updated </p>
         </div>
     </footer>
+
+    <!-- Spinning Fish Decoration -->
+    <img src="spinning_fish.gif" alt="" class="spinning-fish" id="spinning-fish">
+    <audio id="fish-audio" src="fish_song.mp3"></audio>
 
     <script src="script.js"></script>
 </body>
