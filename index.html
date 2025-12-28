@@ -61,6 +61,14 @@
         .spinning-fish:hover {
             transform: scale(1.1);
         }
+        .highlight-badge {
+            display: inline-block;
+            padding: 0.125rem 0.5rem;
+            border-radius: 0.25rem;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-left: 0.5rem;
+        }
     </style>
 </head>
 <body class="bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-300">
@@ -72,6 +80,7 @@
                 <div class="hidden md:flex space-x-4 items-center">
                     <a href="#research" class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-gray-100">Research</a>
                     <a href="#publications" class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-gray-100">Publications</a>
+                    <a href="#teaching" class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-gray-100">Teaching</a>
                     <a href="#talks" class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-gray-100">Talks</a>
                     <button id="theme-toggle" class="theme-toggle ml-4 p-2 rounded-lg bg-gray-200 dark:bg-gray-700 text-gray-600 dark:text-gray-300 hover:bg-gray-300 dark:hover:bg-gray-600">
                         <i id="theme-icon" class="fas fa-moon"></i>
@@ -98,9 +107,9 @@
             </div>
         </div>
         <div class="md:w-2/3 md:pl-6">
-            <p class="text-xl text-center md:text-left mb-2 m-4"> I'm a doctoral student in medical informatics at the <a href="https://www.bordeaux-population-health.center" class="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300"> Bordeaux Population Health Research Center</a> of the University of Bordeaux, the French National Institute of Health and Medical Research (INSERM), and the French Institute for Research in Computer Science (Inria) . More specifically, my doctoral thesis focuses on the study of how cognitive biases impact emergency triage and emergency medical dispatching using Large Language Models (LLM) and Optimal Transport theory. My research efforts are supported by a PhD Grant from the <a href="https://doctorat.u-bordeaux.fr/en/before-phd/graduate-programs/dph" class="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300"> Digital Public Health</a> Graduate Program of the University of Bordeaux. Previously, I obtained a master's degree (MSc) in <a href="https://manutech-sleight.com/graduate-studies/mldm-machine-learning-data-mining-203224.kjsp" class="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300"> Machine Learning and Data Mining</a> at Université Jean Monnet/Université de Lyon.
+            <p class="text-xl text-center md:text-left mb-2 m-4"> I'm a doctoral student in medical informatics at the <a href="https://www.bordeaux-population-health.center" class="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300"> Bordeaux Population Health Research Center</a> of the University of Bordeaux, the French National Institute of Health and Medical Research (INSERM), and the French Institute for Research in Computer Science (Inria). My doctoral thesis focuses on quantifying how cognitive biases impact emergency triage and medical dispatching using Large Language Models (LLMs) and Optimal Transport theory. My research efforts are supported by a PhD Grant from the <a href="https://doctorat.u-bordeaux.fr/en/before-phd/graduate-programs/dph" class="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300"> Digital Public Health</a> Graduate Program of the University of Bordeaux.
                 <br><br>
-                Before that, I obtained my Bachelor of Engineering (BEng) in Telecommunications from the Technological University of Panama, specializing in Signal Processing. I also worked as a research engineer at the <a href="http://gitts.utp.ac.pa/es/inicio/" class="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300"> Research Group on Advanced Technologies of Telecommunications and Signal Processing</a>, in Panama City, Panama. I have also done internships in other laboratories in France, such as <a href="https://laboratoirehubertcurien.univ-st-etienne.fr/en/index.html" class="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300"> Hubert Curien Laboratory</a> in Saint-Étienne, and the <a href="https://www.ims-bordeaux.fr" class="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300"> IMS Laboratory</a> in Bordeaux.
+                Previously, I obtained a master's degree (MSc) in <a href="https://manutech-sleight.com/graduate-studies/mldm-machine-learning-data-mining-203224.kjsp" class="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300"> Machine Learning and Data Mining</a> at Université Jean Monnet/Université de Lyon, graduating ranked 2nd with highest honors. Before that, I obtained my Bachelor of Engineering (BEng) in Telecommunications from the Technological University of Panama, specializing in Signal Processing. I've also worked across multiple research labs including <a href="http://gitts.utp.ac.pa/es/inicio/" class="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300">GITTS</a> (Panama), <a href="https://laboratoirehubertcurien.univ-st-etienne.fr/en/index.html" class="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300"> Hubert Curien Laboratory</a> (Saint-Étienne), and the <a href="https://www.ims-bordeaux.fr" class="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300"> IMS Laboratory</a> (Bordeaux).
                 <br><br>
                 When I have time (and money) I learn languages, travel and take photos, and I even used to be an <a href="https://www.youtube.com/watch?v=ZvSHeW-zhhE " class="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300"> audiovisual producer</a>! Anyways, welcome to my website. Feel free to reach out to me if you have any questions.
                 </p>
@@ -116,6 +125,10 @@
             <div class="max-h-40 overflow-y-auto">
                 <ul class="list-none">
                     <li class="bg-blue-50 dark:bg-blue-900/30 p-2 rounded border-l-4 border-blue-500 mb-2">
+                        <span class="text-red-600 dark:text-red-400 font-bold">NEW!</span> 
+                        <a href="https://www.radiofrance.fr/franceculture/podcasts/avec-sciences/creer-des-ia-medicale-inclusive-2813553" class="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 font-semibold">🎙️ Featured on France Culture's "Avec Sciences" — discussing how to create inclusive medical AI</a>
+                    </li>
+                    <li class="bg-blue-50 dark:bg-blue-900/30 p-2 rounded border-l-4 border-blue-500 mb-2">
                         <span class="text-red-600 dark:text-red-400">16/10/2025:</span> I was invited to give a seminar at the Centre d'Épidémiologie et de Recherche en Santé des Populations at the University of Toulouse.
                     </li>
                     <li class="bg-blue-50 dark:bg-blue-900/30 p-2 rounded border-l-4 border-blue-500 mb-2">
@@ -125,8 +138,7 @@
                         <span class="text-red-600 dark:text-red-400">16/06/2025:</span> I was invited to the Institut de mathématiques de Toulouse by Jean Michel Loubès to collaborate on a novel optimal transport part of my thesis.
                     </li>
                     <li class="bg-blue-50 dark:bg-blue-900/30 p-2 rounded border-l-4 border-blue-500 mb-2">
-                        <span class="text-red-600 dark:text-red-400 font-bold">NEW!</span> 
-                        <a href="https://presse.inserm.fr/en/biais-cognitifs-dans-le-soin-comment-lia-generative-pourrait-aider-a-ameliorer-la-prise-en-charge/70110/" class="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 font-semibold">Check out the latest press release about our work!</a>
+                        <a href="https://presse.inserm.fr/en/biais-cognitifs-dans-le-soin-comment-lia-generative-pourrait-aider-a-ameliorer-la-prise-en-charge/70110/" class="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 font-semibold">Check out the INSERM press release about our work!</a>
                     </li>
                     <li class="bg-blue-50 dark:bg-blue-900/30 p-2 rounded border-l-4 border-blue-500 mb-2">
                         <span class="text-red-600 dark:text-red-400">03/04/2025:</span> Watch our recent presentation on synthetic medical data generation during the 2025 edition of Dataquitaine, in Bordeaux
@@ -143,10 +155,12 @@
 
         <section id="research" class="mb-12">
             <h2 class="text-4xl font-bold mb-4">Research Interests</h2>
-            <p>My main research interest is in how we can use language models to quantify human biases in emergency medical decision-making. In other words, I'm interested in fairness but for humans. I have worked on several projects related to the analysis of long-unstructured text for different tasks ranging from sentiment analysis to topic modeling, and more recently, text classification on data from social media and the health domain.
-                <br>
+            <p>My main research interest is in how we can use language models to quantify human biases in emergency medical decision-making. Essentially, fairness research but for humans rather than AI systems. I develop counterfactual methods using fine-tuned LLMs to detect and measure cognitive biases in clinical settings, with implications for healthcare equity across different populations and healthcare systems.
+                <br><br>
+                I have worked on several projects related to the analysis of long-unstructured text for different tasks ranging from sentiment analysis to topic modeling, and more recently, text classification on data from social media and the health domain. My work has been validated on data from both French (Bordeaux University Hospital) and American (MIMIC-IV) emergency departments.
+                <br><br>
                 I have also explored the application of Brain-Computer Interfaces with non-invasive electrodes during my Engineering thesis. This work consisted in the online processing of non-stationary EEG signals for the control of a device. 
-                <br>
+                <br><br>
                 There's more to it than that however, if you have any questions regarding my past work, don't hesitate to ask!</p>
         </section>
 
@@ -234,6 +248,7 @@
                 </li>
                 <li>
                     <a href="https://proceedings.mlr.press/v259/guerra-adames25a.html" class="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300">Uncovering Judgment Biases in Emergency Triage: A Public Health Approach Based on Large Language Models</a>
+                    <span class="highlight-badge bg-yellow-300 dark:bg-yellow-600 text-gray-900 dark:text-white">🏆 Best Paper Award</span>
                     <br>
                     <b>Ariel Guerra-Adames</b>, Marta Avalos-Fernandez, Océane Doremus, Cédric Gil-Jardiné and Emmanuel Lagarde
                     <br>
@@ -388,7 +403,7 @@
                         <button type="button" class="flex-1 px-1 py-1 bg-blue-400 dark:bg-blue-600 text-white rounded hover:bg-blue-600 dark:hover:bg-blue-500 flex justify-center" onclick="show('bib3')">BibTeX</button>
                     </div>
                     <div id="abs3" class="popup-abs" style="display: none;">
-                        In recent years and in parallel with advances in commercially available computing power, the brain computer interface (BCI) has emerged as a new use for the information obtained from existing electroencephalogram (EEG) acquisition technologies. This system works as a communication pathway between an individual’s central nervous system and a computing unit. The BCI described in this study has as primary directive the control of a simulated vehicle, for which it utilizes both neurological activity associated to an individual’s state of focus in the frequency domain, as well as artifacts produced by intentional blinks, found in the time domain. In order to successfully translate the user’s intention into commands, the acquired signals are spectrally and temporally pre-processed, features of interest are extracted by means of the wavelet packet decomposition (WPD), and are finally fed into a convolutional neural network (CNN) model, which outputs recursive predictions about the user’s mental state. The set of these general steps is capable of emitting navigational commands to the vehicle, and at the same time, return a user’s focus state related to the task in hand in the form of a visual feedback loop. Tests performed with the complete system, demonstrate that a system as the one proposed is satisfactorily functional, being capable of carrying the user’s intent to the simulated vehicle with a latency and margin of error within what’s expected for BCI applications based on EEG readings.
+                        In recent years and in parallel with advances in commercially available computing power, the brain computer interface (BCI) has emerged as a new use for the information obtained from existing electroencephalogram (EEG) acquisition technologies. This system works as a communication pathway between an individual's central nervous system and a computing unit. The BCI described in this study has as primary directive the control of a simulated vehicle, for which it utilizes both neurological activity associated to an individual's state of focus in the frequency domain, as well as artifacts produced by intentional blinks, found in the time domain. In order to successfully translate the user's intention into commands, the acquired signals are spectrally and temporally pre-processed, features of interest are extracted by means of the wavelet packet decomposition (WPD), and are finally fed into a convolutional neural network (CNN) model, which outputs recursive predictions about the user's mental state. The set of these general steps is capable of emitting navigational commands to the vehicle, and at the same time, return a user's focus state related to the task in hand in the form of a visual feedback loop. Tests performed with the complete system, demonstrate that a system as the one proposed is satisfactorily functional, being capable of carrying the user's intent to the simulated vehicle with a latency and margin of error within what's expected for BCI applications based on EEG readings.
                     </div>
                     <div id="bib3" class="popup" style="display: none;">
                         @inproceedings{guerra2022control,
@@ -458,6 +473,32 @@
             </ul>
         </section>
 
+        <!-- Teaching Section -->
+        <section id="teaching" class="mb-12">
+            <h2 class="text-4xl font-bold mb-4">Teaching</h2>
+            <p class="mb-4">I teach 64 hours per year at the Master's and PhD level at the University of Bordeaux, covering core topics in machine learning and its applications to healthcare:</p>
+            
+            <div class="space-y-4">
+                <div class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow">
+                    <h3 class="text-xl font-semibold text-blue-600 dark:text-blue-400">Fundamentals of Machine Learning</h3>
+                    <p class="text-gray-600 dark:text-gray-400">Master 2 / PhD level — University of Bordeaux</p>
+                    <p class="mt-2">Core ML concepts including supervised and unsupervised learning, model evaluation, regularization, and practical implementation.</p>
+                </div>
+                
+                <div class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow">
+                    <h3 class="text-xl font-semibold text-blue-600 dark:text-blue-400">Fundamentals of Deep Learning</h3>
+                    <p class="text-gray-600 dark:text-gray-400">Master 2 / PhD level — University of Bordeaux</p>
+                    <p class="mt-2">Neural network architectures, backpropagation, CNNs, RNNs, transformers, and modern deep learning frameworks.</p>
+                </div>
+                
+                <div class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow">
+                    <h3 class="text-xl font-semibold text-blue-600 dark:text-blue-400">Natural Language Processing for Electronic Health Records</h3>
+                    <p class="text-gray-600 dark:text-gray-400">Master 2 / PhD level — University of Bordeaux</p>
+                    <p class="mt-2">Applying NLP techniques to clinical text: named entity recognition, de-identification, clinical coding, and working with medical language models.</p>
+                </div>
+            </div>
+        </section>
+
         <section id="talks" class="mb-12">
             <h2 class="text-4xl font-bold mb-4">Talks & Presentations</h2>
             <ul>
@@ -496,6 +537,24 @@
                 <li>
                     <a class="px-2 py-1 bg-blue-400 dark:bg-blue-600 text-white rounded">Jun 2021</a>
                     <a href="https://doi.org/10.33412/apanac.2021.3237" target="_blank"> <b>"Control de un Vehículo Mediante el Procesamiento e Interpretación en Tiempo Real de Señales de Electroencefalografía"</b> at APANAC 2021, Panama City, Panama</a>
+                </li>
+            </ul>
+        </section>
+
+        <!-- Media Section -->
+        <section id="media" class="mb-12">
+            <h2 class="text-4xl font-bold mb-4">In the Media</h2>
+            <ul class="space-y-3">
+                <li class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow">
+                    <a class="px-2 py-1 bg-purple-500 text-white rounded text-sm">🎙️ Radio</a>
+                    <a href="https://www.radiofrance.fr/franceculture/podcasts/avec-sciences/creer-des-ia-medicale-inclusive-2813553" target="_blank" class="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 font-semibold ml-2">"Créer des IA médicales inclusives"</a>
+                    <span class="text-gray-600 dark:text-gray-400"> — France Culture, Avec Sciences</span>
+                    <p class="mt-1 text-gray-600 dark:text-gray-400 text-sm">Interview discussing the development of inclusive medical AI and how LLMs can help detect cognitive biases in healthcare.</p>
+                </li>
+                <li class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow">
+                    <a class="px-2 py-1 bg-green-500 text-white rounded text-sm">📰 Press</a>
+                    <a href="https://presse.inserm.fr/en/biais-cognitifs-dans-le-soin-comment-lia-generative-pourrait-aider-a-ameliorer-la-prise-en-charge/70110/" target="_blank" class="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 font-semibold ml-2">"Biais cognitifs dans le soin : comment l'IA générative pourrait aider à améliorer la prise en charge"</a>
+                    <span class="text-gray-600 dark:text-gray-400"> — INSERM Press Release</span>
                 </li>
             </ul>
         </section>
