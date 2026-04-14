@@ -64,38 +64,68 @@ async function fetchLastCommitDate() {
 }
 
 // Theme management
+let themeToggleCount = 0;
+
 function initTheme() {
-    // Check for saved theme preference or default to system preference
     const savedTheme = localStorage.getItem('theme');
     const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    
+
     if (savedTheme === 'dark' || (!savedTheme && systemPrefersDark)) {
         document.documentElement.classList.add('dark');
-        updateThemeIcon(true);
+        updateThemeIcon('dark');
     } else {
         document.documentElement.classList.remove('dark');
-        updateThemeIcon(false);
+        updateThemeIcon('light');
     }
 }
 
-function updateThemeIcon(isDark) {
+function updateThemeIcon(theme) {
     const themeIcon = document.getElementById('theme-icon');
-    if (themeIcon) {
-        themeIcon.className = isDark ? 'fas fa-sun' : 'fas fa-moon';
+    if (!themeIcon) return;
+    if (theme === 'stetienne') {
+        themeIcon.className = 'fas fa-futbol';
+    } else if (theme === 'dark') {
+        themeIcon.className = 'fas fa-sun';
+    } else {
+        themeIcon.className = 'fas fa-moon';
     }
 }
 
 function toggleTheme() {
+    const isStetienne = document.documentElement.classList.contains('stetienne');
+
+    const mainName = document.getElementById('main-name');
+
+    if (isStetienne) {
+        document.documentElement.classList.remove('stetienne');
+        localStorage.setItem('theme', 'light');
+        updateThemeIcon('light');
+        if (mainName) mainName.innerHTML = "Hey, I'm Ariel<br>Guerra-Adames";
+        themeToggleCount = 0;
+        return;
+    }
+
+    themeToggleCount++;
+
+    if (themeToggleCount === 3) {
+        document.documentElement.classList.remove('dark');
+        document.documentElement.classList.add('stetienne');
+        localStorage.removeItem('theme');
+        updateThemeIcon('stetienne');
+        if (mainName) mainName.innerHTML = "Hey, Je suis vert et fier&trade;";
+        themeToggleCount = 0;
+        return;
+    }
+
     const isDark = document.documentElement.classList.contains('dark');
-    
     if (isDark) {
         document.documentElement.classList.remove('dark');
         localStorage.setItem('theme', 'light');
-        updateThemeIcon(false);
+        updateThemeIcon('light');
     } else {
         document.documentElement.classList.add('dark');
         localStorage.setItem('theme', 'dark');
-        updateThemeIcon(true);
+        updateThemeIcon('dark');
     }
 }
 
