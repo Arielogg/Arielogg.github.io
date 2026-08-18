@@ -9,12 +9,26 @@ window.addEventListener('scroll', function() {
     }
 });
 
-setTimeout(function() {
-    const profilePic = document.getElementById('profile-pic');
-    if (profilePic) {
-        profilePic.src = 'sus.jpeg';
-    }
-}, 180000);
+// Profile picture easter egg: balatro at 3 min, sus at 6 min
+(function() {
+    const STAGE_DELAY = 180000;
+    const stages = ['balatroprofile.png', 'sus.jpeg'];
+
+    // Preload so the swaps are instant
+    stages.forEach(function(src) {
+        const img = new Image();
+        img.src = src;
+    });
+
+    stages.forEach(function(src, i) {
+        setTimeout(function() {
+            const profilePic = document.getElementById('profile-pic');
+            if (profilePic) {
+                profilePic.src = src;
+            }
+        }, STAGE_DELAY * (i + 1));
+    });
+})();
 
 function show(id) {
     var element = document.getElementById(id);
